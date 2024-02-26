@@ -22,8 +22,8 @@
                 <ul>
                     <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
                     <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li>
-                    <li><a href="#skills" onclick="seleccionar()">HABILIDADES</a></li>  
+                    <li><a href="#skills" onclick="seleccionar()">HABILIDADES</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li>  
                     <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
                 </ul>
             </nav>
@@ -43,7 +43,9 @@
             <h2>Soy José Alexander Salinas Lobos, estudiante de Ingeniería en Sistemas y Redes Informáticas en la Universidad Gerardo Barrios. Con especialización en bases de datos, redes (certificado en CCNA1) y desarrollo de front-end, he participado en proyectos prácticos que enriquecen mi experiencia. Destaco por habilidades técnicas sólidas y un enfoque colaborativo. Mi ética, responsabilidad y búsqueda constante de la excelencia son fundamentales en mi carrera, valorando la honestidad y la capacidad de aprendizaje continuo.</h2>
             <div class="redes">
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/josè-lobos/" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
                 <a href="mailto:alexlobos303@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
 
             </div>
@@ -62,36 +64,19 @@
                 </p>
 
             <div class="fila">
-                <!-- datos personales -->
-                <div class="col">
-                    <h3>Datos Personales</h3>
-                    <ul>
-                        <li>
-                            <strong>Cumpleaños</strong>
-                            18-09-2002
-                        </li>
-                        <li>
-                            <strong>Teléfono</strong>
-                            +503 7943 5457
-                        </li>
-                        <li>
-                            <strong>Email</strong>
-                            alexlobos303@gmail.com
-                        </li>
-                        <li>
-                            <strong>Dirección</strong>
-                            Jiquilisco,Usulutan
-                        </li>
-                        
-                    </ul>
-                </div>
-
-                
             </div>
-            <button id="descargarCV" onclick="descargarCV()">
-                Descargar CV <i class="fas fa-download"></i>
+
+            <button id="descargarCVIngles" onclick="descargarCV('ingles')">
+                Download CV Ingles <i class="fas fa-download"></i>
                 <span class="overlay"></span>
             </button>
+            
+            <button id="descargarCVEspanol" onclick="descargarCV('espanol')">
+                Descargar CV Español <i class="fas fa-download"></i>
+                <span class="overlay"></span>
+            </button>
+            
+            
         </div>
     </section>
 
@@ -195,6 +180,35 @@
 
     <!-- SECCION PORTFOLIO -->
     
+
+    <!-- SECCION PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+        <div class="contenido-seccion">
+          <h2>PROYECTOS</h2>
+          <div class="galeria">
+            <div class="proyecto" onclick="nextImage()">
+              <img src="img/norris.jpeg" alt="Norris Project 1" id="image1" style="display: block;">
+              <img src="img/norris2.jpeg" alt="Norris Project 2" id="image2" style="display: none;">
+              <img src="img/norris3.jpeg" alt="Norris Project 2" id="image3" style="display: none;">
+              <img src="img/norris4.jpeg" alt="Norris Project 2" id="image4" style="display: none;">
+              <img src="img/norris5.jpeg" alt="Norris Project 2" id="image5" style="display: none;">
+              <img src="img/norris6.jpeg" alt="Norris Project 2" id="image6" style="display: none;">
+              <img src="img/norris7.jpeg" alt="Norris Project 2" id="image7" style="display: none;">
+              <img src="img/norris8.jpeg" alt="Norris Project 2" id="image8" style="display: none;">
+              <img src="img/norris9.jpeg" alt="Norris Project 2" id="image9" style="display: none;">
+              <img src="img/norris10.jpeg" alt="Norris Project 2" id="image10" style="display: none;">
+              <div class="overlay">
+                <h3>Diseño Creativo</h3>
+                <p>Fotografía</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+
     <!-- SECCION CONTACTO -->
     <section id="contacto" class="contacto">
         <div class="contenido-seccion">

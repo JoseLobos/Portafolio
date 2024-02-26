@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills Dashboard</title>
+<!-- Import Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+  .skill-label {
+    position: relative;
+    padding-right: 2.5rem; /* Space for the percentage label */
+  }
+
+  .skill-percentage {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 1rem; /* Padding inside the circle */
+  }
+
+  .skill-circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #064E3B; /* Dark teal color */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+
+  .skill-bar {
+    height: 1rem;
+    background: linear-gradient(90deg, rgba(5,150,105,1) 0%, rgba(5,212,172,1) 100%);
+  }
+</style>
+</head>
+<body class="bg-gray-900 text-white">
+
+<div class="container mx-auto p-4">
+  <h1 class="text-4xl font-bold mb-6">Jose Lobos</h1>
+
+  <h2 class="text-2xl font-bold mb-4">Technical Skills</h2>
+  <div class="mb-4" id="technical-skills">
+    <!-- Technical skills will be populated by JavaScript -->
+  </div>
+
+  <h2 class="text-2xl font-bold mb-4">Professional Skills</h2>
+  <div class="mb-4" id="professional-skills">
+    <!-- Professional skills will be populated by JavaScript -->
+  </div>
+</div>
+
+<script>
+  const technicalSkills = {
+    'SQLite': 70,
+    'MongoDB': 89,
+    'MariaDB': 95,
+    'Photoshop': 76,
+    'Javascript': 65,
+    'HTML & CSS': 75
+  };
+
+  const professionalSkills = {
+    'Creatividad': 80,
+    'Dedicación': 99,
+    'Comunicación': 78,
+    'Trabajo en Equipo': 95
+  };
+
+  function populateSkills(skills, containerId) {
+    const container = document.getElementById(containerId);
+    Object.keys(skills).forEach(skill => {
+      const skillValue = skills[skill];
+      const skillElement = document.createElement('div');
+      skillElement.classList.add('mb-2', 'skill-label');
+
+      const label = document.createElement('span');
+      label.textContent = skill;
+      skillElement.appendChild(label);
+
+      const barContainer = document.createElement('div');
+      barContainer.classList.add('w-full', 'bg-gray-700', 'rounded-full', 'overflow-hidden');
+
+      const bar = document.createElement('div');
+      bar.style.width = `${skillValue}%`;
+      bar.classList.add('skill-bar', 'rounded-full');
+      barContainer.appendChild(bar);
+
+      const percentage = document.createElement('div');
+      percentage.classList.add('skill-percentage');
+      const circle = document.createElement('div');
+      circle.classList.add('skill-circle');
+      circle.textContent = `${skillValue}%`;
+      percentage.appendChild(circle);
+      barContainer.appendChild(percentage);
+
+      skillElement.appendChild(barContainer);
+      container.appendChild(skillElement);
+    });
+  }
+
+  populateSkills(technicalSkills, 'technical-skills');
+  populateSkills(professionalSkills, 'professional-skills');
+</script>
+
+</body>
+</html>

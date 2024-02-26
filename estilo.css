@@ -188,7 +188,7 @@ html{
     border: 2px solid #fff;
     width: fit-content;
     display: block;
-    margin: 20px auto;
+    margin: 40px auto;
     padding: 10px 22px;
     font-size: 16px;
     color: #fff;
@@ -208,6 +208,8 @@ html{
 .sobremi button:hover .overlay{
     width: 100%;
 }
+
+
 /* SECCION S K I L L S */
 .skills{
     background-color: #252A2E;
@@ -712,3 +714,30 @@ footer .arriba{
         width: 100%;
     }
 }
+.galeria::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .proyecto img {
+    display: none; /* Oculta todas las imágenes inicialmente */
+    width: 100%; /* El ancho del contenedor .proyecto */
+    height: 200px; /* Altura fija para todas las imágenes, ajusta según sea necesario */
+    object-fit: contain; /* Asegura que se vea toda la imagen */
+    object-position: center; /* Centra la imagen dentro de su contenedor */
+    position: relative; /* Para posicionar absolutamente la superposición */
+  
+  }
+  
+  /* Muestra la primera imagen */
+  #image1 {
+    display: block;
+  }
+  
+
+  
+
+
+
+
+  
