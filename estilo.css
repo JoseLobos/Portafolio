@@ -734,8 +734,53 @@ footer .arriba{
     display: block;
   }
   
-
+  .tooltip-content {
+    display: none; /* Inicialmente no visible */
+    position: absolute;
+    background-color: white; /* O cualquier color de fondo que prefieras */
+    color: black; /* Color del texto dentro del tooltip */
+    border-radius: 4px; /* Bordes redondeados para el tooltip */
+    padding: 10px; /* Espacio alrededor del texto dentro del tooltip */
+    width: 700px; /* Anchura del tooltip */
+    z-index: 100; /* Asegúrate de que el tooltip se muestre por encima de otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar un efecto elevado */
+    /* Ajusta estas propiedades para posicionar tu tooltip donde prefieras */
+    top: 50%; /* Centrado verticalmente respecto al elemento padre */
+    left: 100%; /* Coloca el inicio del tooltip justo después del proyecto */
+    transform: translateY(-50%); /* Centra el tooltip verticalmente respecto a este punto */
+    pointer-events: none; /* Asegúrate de que el tooltip no interfiera con otros eventos del mouse */
+    text-align: justify; /* Justifica el texto dentro del tooltip */
+  }
+  .tooltip-content-proyecto2 {
+    display: none; /* Inicialmente no visible */
+    position: absolute;
+    background-color: white; /* O cualquier color de fondo que prefieras */
+    color: black; /* Color del texto dentro del tooltip */
+    border-radius: 4px; /* Bordes redondeados para el tooltip */
+    padding: 10px; /* Espacio alrededor del texto dentro del tooltip */
+    width: 600px; /* Anchura del tooltip */
+    z-index: 100; /* Asegúrate de que el tooltip se muestre por encima de otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar un efecto elevado */
+    /* Ajusta estas propiedades para posicionar tu tooltip donde prefieras */
+    top: 50%; /* Centrado verticalmente respecto al elemento padre */
+    left: -180%; /* Coloca el inicio del tooltip justo después del proyecto */
+    transform: translateY(-50%); /* Centra el tooltip verticalmente respecto a este punto */
+    pointer-events: none; /* Asegúrate de que el tooltip no interfiera con otros eventos del mouse */
+    text-align: justify; /* Justifica el texto dentro del tooltip */
+    
   
+  }
+  
+  .selector-idioma {
+    margin: 10px;
+    padding: 5px;
+    background-color:#1e2326; 
+    border: 1px solid #1e2326;; /* Agrega un borde sutil */
+    border-radius: 5px; /* Redondea las esquinas */
+    color: white;
+    
+}
+
 
 
 

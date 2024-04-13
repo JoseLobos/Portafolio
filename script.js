@@ -67,20 +67,64 @@ function efectoHabilidades(){
     }
 }
 
-
 //detecto el scrolling para aplicar la animacion de la barra de habilidades
 window.onscroll = function(){
     efectoHabilidades();
 } 
 
-  let currentImage = 1;
-  const totalImages = 10;
-
-  function nextImage() {
-    // Ocultar la imagen actual
-    document.getElementById('image' + currentImage).style.display = 'none';
-    // Avanzar a la siguiente imagen
-    currentImage = currentImage % totalImages + 1;
-    // Mostrar la nueva imagen
-    document.getElementById('image' + currentImage).style.display = 'block';
+  
+function nextImage(clickedElement) {
+    // Obtiene el contenedor del proyecto específico donde se hizo clic
+    const projectContainer = clickedElement.closest('.proyecto');
+  
+    // Obtiene todas las imágenes dentro de este contenedor específico
+    const images = projectContainer.querySelectorAll('img.imagen-proyecto');
+    
+    // Encuentra la imagen actual que se muestra
+    let currentImageIndex = Array.from(images).findIndex(img => img.style.display === 'block');
+    
+    // Oculta la imagen actual
+    images[currentImageIndex].style.display = 'none';
+    
+    // Determina el índice de la siguiente imagen
+    let nextImageIndex = (currentImageIndex + 1) % images.length;
+    
+    // Muestra la siguiente imagen
+    images[nextImageIndex].style.display = 'block';
   }
+
+  
+  function showTooltip(element) {
+    // Selecciona el tooltip correcto dentro de este proyecto
+    const tooltip = element.querySelector('.tooltip-content, .tooltip-content-proyecto2'); // Añade más selectores según sea necesario
+    if (tooltip) {
+      tooltip.style.display = 'block';
+    }
+  }
+  
+  function hideTooltip(element) {
+    // Selecciona el tooltip correcto dentro de este proyecto
+    const tooltip = element.querySelector('.tooltip-content, .tooltip-content-proyecto2'); // Añade más selectores según sea necesario
+    if (tooltip) {
+      tooltip.style.display = 'none';
+    }
+  }
+  
+  document.getElementById('languageSwitcher').addEventListener('change', function() {
+    var selectedLanguage = this.value;
+    // Encuentra todos los elementos que tienen atributos de datos de traducción
+    document.querySelectorAll('[data-es], [data-en]').forEach(element => {
+        if (selectedLanguage === 'ingles') {
+            element.textContent = element.dataset.en;
+        } else {
+            element.textContent = element.dataset.es;
+        }
+    });
+});
+
+  
+
+
+
+
+  
