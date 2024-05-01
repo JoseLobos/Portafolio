@@ -781,7 +781,40 @@ footer .arriba{
     
 }
 
-
+/* CSS for About Section Image */
+.about-image {
+    width: 100%; /* Full width on small screens */
+    max-width: 300px; /* Maximum width of the image, adjust as needed */
+    max-height: 200px; /* Maximum height of the image, adjust as needed */
+    height: auto; /* Keep image aspect ratio */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    margin-left: auto; /* Centering the image */
+    margin-right: auto; /* Centering the image */
+    margin-top: 1.5rem; /* Top margin */
+    margin-bottom: 1.5rem; /* Bottom margin */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: block; /* Ensure it's a block element */
+  }
+  
+  /* Media query for medium screens and up */
+  @media (min-width: 768px) {
+    .about-image {
+      max-width: 250px; /* Adjust max-width as necessary for medium screens */
+      max-height: 150px; /* Adjust max-height as necessary for medium screens */
+    }
+  }
+  
+  /* Media query for large screens and up */
+  @media (min-width: 224px) {
+    .about-image {
+      max-width: 300px; /* Adjust max-width as necessary for large screens */
+      max-height: 350px; /* Adjust max-height as necessary for large screens */
+    }
+  }
+  
+ 
+  
 
 
 
