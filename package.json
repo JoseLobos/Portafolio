@@ -1,9 +1,55 @@
 {
-    "scripts": {
-      "start": "http-server -o"
-    },
-    "devDependencies": {
-      "http-server": "^0.12.3"
-    }
-  }
-  
+  "scripts": {
+    "start": "http-server -o"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "name": "portafolio-1",
+  "description": "",
+  "version": "1.0.0",
+  "main": "script.js",
+  "dependencies": {
+    "async": "^2.6.4",
+    "basic-auth": "^1.1.0",
+    "call-bind": "^1.0.6",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "corser": "^2.0.1",
+    "debug": "^3.2.7",
+    "define-data-property": "^1.1.2",
+    "ecstatic": "^3.3.2",
+    "es-errors": "^1.3.0",
+    "eventemitter3": "^4.0.7",
+    "express": "^4.19.2",
+    "follow-redirects": "^1.15.5",
+    "function-bind": "^1.1.2",
+    "get-intrinsic": "^1.2.4",
+    "gopd": "^1.0.1",
+    "has-property-descriptors": "^1.0.1",
+    "has-proto": "^1.0.1",
+    "has-symbols": "^1.0.3",
+    "hasown": "^2.0.0",
+    "he": "^1.2.0",
+    "http-proxy": "^1.18.1",
+    "lodash": "^4.17.21",
+    "mime": "^1.6.0",
+    "minimist": "^1.2.8",
+    "mkdirp": "^0.5.6",
+    "ms": "^2.1.3",
+    "nodemailer": "^6.9.13",
+    "object-inspect": "^1.13.1",
+    "opener": "^1.5.2",
+    "portfinder": "^1.0.32",
+    "qs": "^6.11.2",
+    "requires-port": "^1.0.0",
+    "secure-compare": "^3.0.1",
+    "set-function-length": "^1.2.1",
+    "side-channel": "^1.0.5",
+    "union": "^0.5.0",
+    "url-join": "^2.0.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

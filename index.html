@@ -273,21 +273,22 @@
     <section id="contacto" class="contacto">
         <div class="contenido-seccion">
             <h2>CONTACTO</h2>
-            <div class="fila">
+            
+                <form class="fila" action="https://formsubmit.co/alexlobos303@gmail.com" method="POST">
                 <!-- Formulario -->
                 <div class="col">
-                    <input type="text" placeholder="Tú Nombre">
-                    <input type="text" placeholder="Número telefónico">
-                    <input type="text" placeholder="Dirección de correo">
-                    <input type="text" placeholder="Tema">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                    <button>
+                    <input type="text" name="nombre" id="nombre" placeholder="Tú Nombre">
+                    <input type="text" name="telefono" id="telefono" placeholder="Número telefónico">
+                    <input type="text" name="correo" id="correo" placeholder="Dirección de correo">
+                    <input type="text" name="tema" id="tema" placeholder="Tema">
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <button type="submit" class="btn">
                         Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
                         <span class="overlay"></span>
-                    </button>
+                    </button>                    
                 </div>
                
-            </div>
+            </form>
         </div>
     </section>
 
