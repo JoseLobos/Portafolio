@@ -122,9 +122,78 @@ function nextImage(clickedElement) {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('testimonialForm');
+    const testimonialsDisplay = document.getElementById('testimonialsDisplay');
+    const inputName = document.querySelector('input[name="nombre"]');
+    const inputTestimony = document.querySelector('textarea[name="testimonio"]');
+    const inputFile = document.querySelector('input[name="foto"]');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Verificar si todos los campos están llenos
+        if (!inputName.value.trim() || !inputTestimony.value.trim() || !inputFile.files.length) {
+            alert('Por favor, completa todos los campos y selecciona una imagen.');
+            return; // Detiene la función si algún campo está vacío
+        }
+
+        const formData = new FormData(form);
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const base64Image = e.target.result;
+            const testimonial = {
+                nombre: formData.get('nombre'),
+                testimonio: formData.get('testimonio'),
+                foto: base64Image
+            };
+            saveTestimonial(testimonial);
+            displayTestimonials();
+            clearForm(); // Limpia el formulario después de enviar
+        };
+        reader.readAsDataURL(formData.get('foto'));
+    });
+
+    function saveTestimonial(testimonial) {
+        let testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+        testimonials.push(testimonial);
+        localStorage.setItem('testimonials', JSON.stringify(testimonials));
+    }
+
+    function displayTestimonials() {
+        const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+        testimonialsDisplay.innerHTML = '';
+        testimonials.forEach(t => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <h3>${t.nombre}</h3>
+                <p>${t.testimonio}</p>
+                <img src="${t.foto}" alt="Foto de ${t.nombre}" style="width: 150px; height: 150px; object-fit: cover;">
+            `;
+            testimonialsDisplay.appendChild(div);
+        });
+    }
+
+    function clearForm() {
+        // Limpia cada elemento del formulario
+        inputName.value = '';
+        inputTestimony.value = '';
+        inputFile.value = '';
+    }
+});
+
+function toggleTooltip(infoId) {
+    const infoDiv = document.getElementById(infoId);
+    if (infoDiv.classList.contains('hidden')) {
+      infoDiv.classList.remove('hidden');
+      infoDiv.classList.add('visible');
+    } else {
+      infoDiv.classList.remove('visible');
+      infoDiv.classList.add('hidden');
+    }
+  }
   
-
-
-
-
+  
+  
+  
   

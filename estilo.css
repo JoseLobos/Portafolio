@@ -209,157 +209,6 @@ html{
     width: 100%;
 }
 
-
-/* SECCION S K I L L S */
-.skills{
-    background-color: #252A2E;
-    color: #fff;
-    padding: 50px 20px;
-}
-.skills .contenido-seccion{
-    max-width: 1100px;
-    margin: auto;
-}
-.skills h2{
-    font-size: 48px;
-    font-family: 'Righteous';
-    text-align: center;
-    padding: 20px 0;
-
-}
-.skills .fila{
-    display: flex;
-}
-.skills .fila .col{
-    width: 50%;
-    padding: 0 20px;
-}
-.skills .fila .col h3{
-    font-size: 28px;
-    font-family: 'Righteous';
-    margin-bottom: 25px;
-}
-.skills .skill > span{
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-}
-.skills .skill .barra-skill{
-    height: 8px;
-    width: 80%;
-    background-color: #131517;
-    position: relative;
-    margin-bottom: 30px;
-}
-.skills .skill .progreso{
-    background-color: #1CB698;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 8px;
-}
-.skills .skill .barra-skill span{
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background-color: #1CB698;
-    border-radius: 50px;
-    line-height: 40px;
-    text-align: center;
-    top: -17px;
-    right: -15px;
-    font-size: 14px;
-}
-/* Estas clases se agregaran dinamicamente mediante javascript */
-.skills .skill .javascript{
-    width: 0%;
-    animation: 2s javascript forwards;
-}
-@keyframes javascript {
-    0%{width: 0%;}
-    100%{width: 75%;}
-}
-
-.skills .skill .htmlcss{
-    width: 0%;
-    animation: 2s htmlcss forwards;
-}
-@keyframes htmlcss {
-    0%{width: 0%;}
-    100%{width: 89%;}
-}
-
-.skills .skill .photoshop{
-    width: 0%;
-    animation: 2s photoshop forwards;
-}
-@keyframes photoshop {
-    0%{width: 0%;}
-    100%{width: 95%;}
-}
-
-.skills .skill .wordpress{
-    width: 0%;
-    animation: 2s wordpress forwards;
-}
-@keyframes wordpress {
-    0%{width: 0%;}
-    100%{width: 81%;}
-}
-
-.skills .skill .drupal{
-    width: 0%;
-    animation: 2s drupal forwards;
-}
-@keyframes drupal {
-    0%{width: 0%;}
-    100%{width: 55%;}
-}
-
-.skills .skill .comunicacion{
-    width: 0%;
-    animation: 2s comunicacion forwards;
-}
-@keyframes comunicacion {
-    0%{width: 0%;}
-    100%{width: 80%;}
-}
-
-.skills .skill .trabajo{
-    width: 0%;
-    animation: 2s trabajo forwards;
-}
-@keyframes trabajo {
-    0%{width: 0%;}
-    100%{width: 70%;}
-}
-
-.skills .skill .creatividad{
-    width: 0%;
-    animation: 2s creatividad forwards;
-}
-@keyframes creatividad {
-    0%{width: 0%;}
-    100%{width: 99%;}
-}
-
-.skills .skill .dedicacion{
-    width: 0%;
-    animation: 2s dedicacion forwards;
-}
-@keyframes dedicacion {
-    0%{width: 0%;}
-    100%{width: 65%;}
-}
-
-.skills .skill .proyect{
-    width: 0%;
-    animation: 2s proyect forwards;
-}
-@keyframes proyect {
-    0%{width: 0%;}
-    100%{width: 94%;}
-}
 /* SECCION CURRICULUM */
 .curriculum{
     background-color: #1e2326;
@@ -726,6 +575,7 @@ footer .arriba{
     object-fit: contain; /* Asegura que se vea toda la imagen */
     object-position: center; /* Centra la imagen dentro de su contenedor */
     position: relative; /* Para posicionar absolutamente la superposición */
+    margin-top: 150px;
   
   }
   
@@ -805,17 +655,583 @@ footer .arriba{
     }
   }
   
-  /* Media query for large screens and up */
-  @media (min-width: 224px) {
-    .about-image {
-      max-width: 300px; /* Adjust max-width as necessary for large screens */
-      max-height: 350px; /* Adjust max-height as necessary for large screens */
-    }
+ /* Estilos generales para la sección de testimonios */
+ .testimonios {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.testimonios h2 {
+    text-align: center;
+    color: #333;
+}
+
+#testimonialForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 100px; /* Increase top margin to push the form down */
+    margin-bottom: 20px;
+}
+
+#testimonialForm input[type="text"],
+#testimonialForm textarea,
+#testimonialForm input[type="file"] {
+    width: 30%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#testimonialForm button {
+    padding: 5px 5px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#testimonialForm button:hover {
+    background-color: #0056b3;
+}
+
+#testimonialsDisplay {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+#testimonialsDisplay div {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 2px 5px rgba(253, 252, 252, 0);
+    padding: 15px;
+    border-radius: 5px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#testimonialsDisplay img {
+    width: 150px;  /* Ancho fijo para todas las imágenes */
+    height: 150px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.proyecto .imagenes-proyecto img {
+    display: none; /* Ocultar todas las imágenes inicialmente */
+}
+
+.proyecto .imagenes-proyecto img.activo {
+    display: block; /* Mostrar sólo la imagen activa */
+}
+
+.tooltip-content {
+    display: none; /* Ocultar el tooltip inicialmente */
+}
+
+.proyecto:hover .tooltip-content {
+    display: block; /* Mostrar tooltip al pasar el mouse */
+}
+
+/* SECCION SKILLS */
+.skills {
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.skills .contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.skills h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+.button-portfolio-1 {
+    font-size: 15px;
+    width: 8em;
+    height: 2em;
+    color: orange;
+    border-left: 0.08em solid;
+    position: relative;
+    margin-top: 7.3em;
+    margin-left: -12em; /* Añadir un margen negativo para desplazar a la izquierda */
+    cursor: pointer;
+    background-color: #333; /* Añadir fondo para hacer el botón visible */
+}
+
+.button-portfolio-1::before,
+.button-portfolio-1::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+.button-portfolio-1::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
+
+.button-portfolio-1::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+.button-portfolio-1 span {
+    position: relative;
+    height: 120%;
+    top: -10%;
+    box-sizing: border-box;
+    border: 0.08em solid;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    transition: 0.3s;
+}
+
+.button-portfolio-1:hover span {
+    transform: translateX(0.15em);
+}
+.button-portfolio-2 {
+    font-size: 15px;
+    width: 8em;
+    height: 2em;
+    color: orange;
+    border-left: 0.08em solid;
+    position: relative;
+    margin-top: 7.3em;
+    margin-left: -12em; /* Añadir un margen negativo para desplazar a la izquierda */
+    cursor: pointer;
+    background-color: #333; /* Añadir fondo para hacer el botón visible */
+}
+
+.button-portfolio-2::before,
+.button-portfolio-2::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+.button-portfolio-2::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
+
+.button-portfolio-2::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+.button-portfolio-2 span {
+    position: relative;
+    height: 120%;
+    top: -10%;
+    box-sizing: border-box;
+    border: 0.08em solid;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    transition: 0.3s;
+}
+
+.button-portfolio-2:hover span {
+    transform: translateX(0.15em);
+}
+.hidden {
+    display: none;
+  }
+  .visible {
+    display: block;
   }
   
+  .button-portfolio-3 {
+    font-size: 15px;
+    width: 8em;
+    height: 2em;
+    color: orange;
+    border-left: 0.08em solid;
+    position: relative;
+    margin-top: 7.3em;
+    margin-left: -7em; /* Añadir un margen negativo para desplazar a la izquierda */
+    cursor: pointer;
+    background-color: #333; /* Añadir fondo para hacer el botón visible */
+}
+
+.button-portfolio-3::before,
+.button-portfolio-3::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+.button-portfolio-3::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
+
+.button-portfolio-3::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+.button-portfolio-3 span {
+    position: relative;
+    height: 120%;
+    top: -10%;
+    box-sizing: border-box;
+    border: 0.08em solid;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    transition: 0.3s;
+}
+
+.button-portfolio-3:hover span {
+    transform: translateX(0.15em);
+}
+
  
-  
+.button-portfolio-4 {
+    font-size: 15px;
+    width: 8em;
+    height: 2em;
+    color: orange;
+    border-left: 0.08em solid;
+    position: relative;
+    margin-top: 7.3em;
+    margin-left: -7em; /* Añadir un margen negativo para desplazar a la izquierda */
+    cursor: pointer;
+    background-color: #333; /* Añadir fondo para hacer el botón visible */
+}
 
+.button-portfolio-4::before,
+.button-portfolio-4::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
 
+.button-portfolio-4::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
 
-  
+.button-portfolio-4::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+.button-portfolio-4 span {
+    position: relative;
+    height: 120%;
+    top: -10%;
+    box-sizing: border-box;
+    border: 0.08em solid;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    transition: 0.3s;
+}
+
+.button-portfolio-4:hover span {
+    transform: translateX(0.15em);
+}
+ 
+.button-portfolio-5 {
+    font-size: 15px;
+    width: 8em;
+    height: 2em;
+    color: orange;
+    border-left: 0.08em solid;
+    position: relative;
+    margin-top: 7.3em;
+    margin-left: -7em; /* Añadir un margen negativo para desplazar a la izquierda */
+    cursor: pointer;
+    background-color: #333; /* Añadir fondo para hacer el botón visible */
+}
+
+.button-portfolio-5::before,
+.button-portfolio-5::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+.button-portfolio-5::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
+
+.button-portfolio-5::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+.button-portfolio-5 span {
+    position: relative;
+    height: 120%;
+    top: -10%;
+    box-sizing: border-box;
+    border: 0.08em solid;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    transition: 0.3s;
+}
+
+.button-portfolio-5:hover span {
+    transform: translateX(0.15em);
+}
+
+.button-portfolio-6 {
+    font-size: 15px;
+    width: 8em;
+    height: 2em;
+    color: orange;
+    border-left: 0.08em solid;
+    position: relative;
+    margin-top: 7.3em;
+    margin-left: -7em; /* Añadir un margen negativo para desplazar a la izquierda */
+    cursor: pointer;
+    background-color: #333; /* Añadir fondo para hacer el botón visible */
+}
+
+.button-portfolio-6::before,
+.button-portfolio-6::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+.button-portfolio-6::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
+
+.button-portfolio-6::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+.button-portfolio-6 span {
+    position: relative;
+    height: 120%;
+    top: -10%;
+    box-sizing: border-box;
+    border: 0.08em solid;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    transition: 0.3s;
+}
+
+.button-portfolio-6:hover span {
+    transform: translateX(0.15em);
+}
+
+ 
+.button-portfolio-7 {
+    font-size: 15px;
+    width: 8em;
+    height: 2em;
+    color: orange;
+    border-left: 0.08em solid;
+    position: relative;
+    margin-top: 7.3em;
+    margin-left: -7em; /* Añadir un margen negativo para desplazar a la izquierda */
+    cursor: pointer;
+    background-color: #333; /* Añadir fondo para hacer el botón visible */
+}
+
+.button-portfolio-7::before,
+.button-portfolio-7::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+.button-portfolio-7::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
+
+.button-portfolio-7::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+.button-portfolio-7 span {
+    position: relative;
+    height: 120%;
+    top: -10%;
+    box-sizing: border-box;
+    border: 0.08em solid;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    transition: 0.3s;
+}
+
+.button-portfolio-7:hover span {
+    transform: translateX(0.15em);
+}
+ 
+.button-portfolio-8 {
+    font-size: 15px;
+    width: 8em;
+    height: 2em;
+    color: orange;
+    border-left: 0.08em solid;
+    position: relative;
+    margin-top: 7.3em;
+    margin-left: -7em; /* Añadir un margen negativo para desplazar a la izquierda */
+    cursor: pointer;
+    background-color: #333; /* Añadir fondo para hacer el botón visible */
+}
+
+.button-portfolio-8::before,
+.button-portfolio-8::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    border-left: inherit;
+    z-index: -1;
+}
+
+.button-portfolio-8::before {
+    height: 80%;
+    top: 10%;
+    left: calc(-0.15em - 0.08em * 2);
+    filter: brightness(0.8);
+}
+
+.button-portfolio-8::after {
+    height: 60%;
+    top: 20%;
+    left: calc(-0.15em * 2 - 0.08em * 3);
+    filter: brightness(0.6);
+}
+
+.button-portfolio-8 span {
+    position: relative;
+    height: 120%;
+    top: -10%;
+    box-sizing: border-box;
+    border: 0.08em solid;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+    transition: 0.3s;
+}
+
+.button-portfolio-8:hover span {
+    transform: translateX(0.15em);
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.image-box {
+    width: 45%; /* Ajusta el ancho de cada cuadro de imagen */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-box:hover {
+    transform: scale(1.05);
+}
