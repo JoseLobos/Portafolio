@@ -137,14 +137,39 @@
         </div>
 
         <h2>Testimonios</h2>
-            <form id="testimonialForm">
-                <input type="text" name="nombre" placeholder="Tu Nombre" required>
-                <textarea name="testimonio" placeholder="Tu Testimonio" required></textarea>
-                <input type="file" name="foto" accept="image/*" required>
-                <button type="submit">Enviar Testimonio</button>
-            </form>
-            <div id="testimonialsDisplay"></div>
+        <div class="slideshow-container">
+
+            <div class="mySlides">
+              <q>Usulután 10 de junio de 2024<br><br>
+                Yo Herbert René Cordero Henríquez, Licenciado de profesión y docente de la Universidad Gerardo Barrios, doy mi recomendación por este medio  de José Alexander Salinas Lobos quien es estudiante, cursando la carrera de Ingeniería en Sistemas y Redes Informáticas y conozco desde hace 4 años.
+                Como estudiante ha mostrado respeto a los docentes y compañeros, completa dedicación a las actividades y proyectos de estudio. Demuestra poseer buenas habilidades, trabajo en equipo y disponibilidad en los quehaceres de la Facultad de Ciencia y Tecnología y gran sentido de responsabilidad.
+                Es una excelente persona, con ganas de aprender y habilidades sociales; su forma de pensar estratégica le hace muy apta para desarrollar cualquier tarea. Por su aptitud y actitud tiene grandes intentos por superarse. Por lo que estoy seguro de que llegará a ser una persona exitosa en la vida y en su carrera profesional.
+              <br>
+                Docente de la Facultad de Ciencia y Tecnología<br>
+                Centro Regional Usulután</q>
+              <p class="author">- Lic. Ms. Herbert René Cordero Henríquez</p>
+            </div>
+            
+            <div class="mySlides">
+              <q>Yo Oscar Roberto Torres Rodríguez, Licenciado en Computación del origen y domicilio de Santa Elena y actualmente docente tiempo completo de la Facultad de Ciencias y Tecnologías de la Universidad Gerardo Barrios de Usulután, HAGO CONSTAR QUE:<br><br>
+                José Alexander Salinas Lobo, es estudiante del ciclo VII de Ingeniería en Sistemas y Redes Informática, de la Universidad “Gerardo Barrios”, afirmo que él es una persona de excelente conducta, honrado, intachable, responsable en todos sus actos y en cuanto a su rol como estudiante es disciplinado, autodidacta, investigador, integral, trabaja en equipo. Afirmo que ha adquirido muchos conocimientos en el área de redes y base de datos, por ello está dispuesto a compartir todos sus conocimientos a una sociedad en progreso.
+              <br>
+                Email: ortorres@ugb.edu.sv</q>
+              <p class="author">- Lic. Máster. Oscar Roberto Torres Rodríguez</p>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            
+            <div class="dot-container">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+            </div>
+            
         </div>
+        
     </section>
       <!-- footer -->
       <footer>
